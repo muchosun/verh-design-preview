@@ -142,7 +142,7 @@
         status.textContent = isLocal
           ? "Предпросмотр: форма заполнена корректно, заявка не отправлена."
           : "Заявка отправлена. Скоро позвоним и уточним детали.";
-        submit.textContent = "Заявка принята";
+        submit.textContent = isLocal ? "Форма проверена" : "Заявка принята";
         phone.disabled = true;
         if (cityInput) cityInput.disabled = true;
         if (areaInput) areaInput.disabled = true;
