@@ -95,7 +95,7 @@
     }
   });
   [image, large].forEach(el => el.addEventListener('error', () => {
-    status.textContent = 'Не удалось загрузить лист. Открой весь альбом в PDF по ссылке ниже.';
+    status.textContent = 'Не удалось загрузить лист. Откройте весь альбом в PDF по ссылке ниже.';
   }));
   show(0);
 })();

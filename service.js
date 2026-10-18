@@ -71,7 +71,7 @@
       const city = cityInput?.value.trim() || "";
       if (cityInput && (!city || city.length > 80 || !/^[\p{L}\p{M} .()\-]+$/u.test(city))) {
         status.dataset.state = "error";
-        status.textContent = "Укажи город квартиры.";
+        status.textContent = "Укажите город квартиры.";
         cityInput.setAttribute("aria-invalid", "true");
         cityInput.focus();
         return;
@@ -97,7 +97,7 @@
       if (!normalizedPhone || !consent) {
         status.dataset.state = "error";
         status.textContent = !normalizedPhone
-          ? "Проверь номер телефона."
+          ? "Проверьте номер телефона."
           : "Нужно согласие на обработку данных.";
         (!normalizedPhone ? phone : form.elements.consent).focus();
         return;
@@ -152,7 +152,7 @@
         console.error("Service lead submission failed", error);
         reachGoal("service_lead_failure", { request: requestType, offer: selectedPackage || undefined });
         status.dataset.state = "error";
-        status.textContent = "Не удалось отправить. Позвони по номеру +7 (918) 238-30-59.";
+        status.textContent = "Не удалось отправить заявку. Позвоните по номеру +7 (918) 238-30-59.";
         submit.disabled = false;
         submit.textContent = "Повторить отправку";
       }

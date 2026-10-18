@@ -128,3 +128,6 @@ body, .selected-projects, .specialty-page .section-light { background: var(--can
   .album-dialog__toolbar .album-controls { width: auto; }
   .mobile-actions { position: static; }
 }
+:root .render-references .selected-grid img { aspect-ratio: 3 / 2; object-fit: contain; background: var(--surface); }
+.render-references .selected-grid a { display: block; }
+.render-reference-link { display: inline-block; min-height: 44px; padding: 10px 0; text-decoration: underline; text-underline-offset: 4px; }

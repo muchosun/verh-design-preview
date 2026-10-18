@@ -18,14 +18,19 @@
     const city = normalize(value);
     inputs.forEach(input => { if (input !== active) input.value = value; });
     const krasnodar = city.toLocaleLowerCase("ru-RU") === "краснодар";
+    let packageChanged = false;
     document.body.dataset.repairAvailable = String(krasnodar);
     localOffers.forEach(offer => {
       offer.hidden = !krasnodar;
       if (offer.tagName === "OPTION") {
         offer.disabled = !krasnodar;
-        if (!krasnodar && offer.selected && packageSelect) packageSelect.selectedIndex = 0;
+        if (!krasnodar && offer.selected && packageSelect) {
+          packageSelect.selectedIndex = 0;
+          packageChanged = true;
+        }
       }
     });
+    if (packageChanged) packageSelect.dispatchEvent(new Event("change", { bubbles: true }));
     try { city ? localStorage.setItem(key, city) : localStorage.removeItem(key); } catch (_) {}
   };
   sync(initial);
